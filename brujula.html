@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="brujula.css">
+    <title>Brujula</title>
+</head>
+<body>
+    <h1>Puntos Cardinales</h1>
+    <div class="contenedor">
+        <div>
+            <form id="form" class="row">  
+                <div class="div4 ml-70">
+                    <h2 class="mt-60 tc">Completa los espacios para iniciar</h2>
+                    <br>
+                    <div class="ml-50 mt-60">
+                        <label for="arriba">Arriba</label>
+                        <label for="abajo" class="ml-30">Abajo</label>  
+                    </div>
+                    <div class="ml-50 mt-30">
+                        <input id="arriba" type="text" name="arriba" class="mt-10" disabled>
+                        <input id="abajo" type="text" name="abajo" class="ml-30 mt-10" disabled> 
+                    </div>
+                    <div class="ml-50 mt-30">
+                        <label for="izquierda" class="mt-10">Izquierda</label>
+                        <label for="derecha" class="ml-30 mt-10">Derecha</label>
+                    </div>
+                    <div class="ml-50 mt-30">
+                        <input id="izquierda" type="text" name="izquierda" class="mt-10" disabled>
+                        <input id="derecha" type="text" name="derecha" class="ml-30 mt-10" disabled>
+                    </div>
+                    <br>
+                    <div>
+                        <button id="aplicar" type="button" class="btn2 ml-50" disabled onclick="campoVacio('arriba', 'abajo', 'izquierda', 'derecha', this.form);">Aplicar</button>
+                    </div>
+                    <div>
+                        <button id="reiniciar" type="button" class="btn2 ml-50" onclick="reinicio(this.form);">Reiniciar</button>
+                    </div>
+                </div>    
+                <div class="div1 ml-70">
+                    <button type="button" class="btnRotate ml-70" onclick="intercambio('top', 'left', 'right', 'bottom', this.form);"><img alt="Flecha" width="120px" height="40px" src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c44e.png"></button>
+                    <input id="left" type="text" value="NORTE" class="mt-125" disabled readonly>
+                </div>
+                <div class="div2 mt-30">
+                    <input id="top" type="text" value="OESTE" disabled readonly>
+                    <button class="mt-240 ml-20 btn" type="button" onclick="intercambio('left', 'right', 'bottom', 'top', this.form);"><img alt="Flecha" width="120px" height="40px" src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c44e.png"></button>
+                    <input id="bottom" type="text"  value="ESTE" class="mt-240" disabled readonly>
+                </div>
+                <div class="div3">
+                    <input id="right" type="text" value="SUR" class="ml-30" disabled readonly>
+                    <button type="button" class="btnRotate mt-125" onclick="intercambio('right', 'bottom', 'top', 'left', this.form);"><img alt="Flecha" width="120px" height="40px" src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c44e.png"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="brujula.js"></script>
+</body>
+</html>
